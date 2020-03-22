@@ -17,6 +17,11 @@ You can install the package with pip:
 
 `pip install bob_telegram_tools` 
 
+Repository
+=======
+
+[Here](https://github.com/antonioroberto1994/bob_telegram_tools) you can find the package source code. 
+
 License
 =======
 
