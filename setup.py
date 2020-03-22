@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bob-telegram-tools",  # Replace with your own username
-    version="0.0.1",
+    version="1.0.0",
     author="Antonio Roberto",
     author_email="roberto.antonio@outlook.it",
     description="A package to monitor your Machine Learning trainings every where without any additional app.",
