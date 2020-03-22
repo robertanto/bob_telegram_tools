@@ -9,7 +9,7 @@ Bob Telegram Tools is a python library which allows you to monitor your machine 
 Documentation
 =============
 
-See https://bob_telegram_tools.github.io/bob_telegram_tools/ for detailed instruction, manuals and tutorials.
+See https://antonioroberto1994.github.io/bob_telegram_tools/ for detailed instruction, manuals and tutorials.
 
 Installation instructions
 =========================
