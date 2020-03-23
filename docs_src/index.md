@@ -15,7 +15,7 @@ Installation instructions
 
 You can install the package with pip:
 
-`pip install bob_telegram_tools` 
+`pip install bob-telegram-tools` 
 
 Repository
 =======
