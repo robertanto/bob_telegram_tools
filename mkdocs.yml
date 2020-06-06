@@ -1,4 +1,7 @@
 site_name: BobTelegramTools
+repo_url: "https://github.com/robertanto/bob_telegram_tools"
+site_url: "https://robertanto.github.io/bob_telegram_tools/"
+repo_name: "bob_telegram_tools"
 docs_dir: docs_src/
 site_dir: docs/
 nav:
@@ -6,20 +9,27 @@ nav:
     - Tutorials: 
         - Create a Telegram bot: bot_father.md
         - Use a bot : bot_ex.md
-        - Keras Callback: keras_ex.md
         - Telegram ProgressBar: utilities_ex.md
+        - Send plots: plot_ex.md
+        - Keras Callback: keras_ex.md
     - Modules: 
         - Bot: bot.md
         - Keras: keras.md
         - Utils: utilities.md
 theme:
   name: 'material'
-  logo: 
-      icon: 'settings_ethernet'
   feature:
       tabs: false
   palette:
       primary: 'light blue'
       accent: 'light blue'
+      
 markdown_extensions:
   - admonition
+
+plugins:
+  - search
+  - mkdocstrings:
+      watch:
+        - docs_src
+        - bob_telegram_tools

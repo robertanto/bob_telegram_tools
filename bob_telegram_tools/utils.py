@@ -1,5 +1,9 @@
+"""
+Package containing the Telegram utils functions and classes. 
+"""
 from datetime import datetime
 from tqdm import tqdm
+from .bot import TelegramBot
 
 
 class _TelegramIO():
@@ -23,7 +27,19 @@ class _TelegramIO():
 
 
 class TelegramTqdm():
-    def __init__(self, bot, show_last_update=False):
+    """
+    This class allows to send through a Telegram Bot a progress bar. 
+    """
+
+    def __init__(self, bot: TelegramBot, show_last_update: bool = False):
+        """
+        Constructor
+
+        Arguments:
+            bot: TelegramBot object
+
+            show_last_update: True to receive the time of the last update
+        """
         self.bot = bot
         self.tg_io = _TelegramIO(self.bot, show_last_update)
 
@@ -33,7 +49,13 @@ class TelegramTqdm():
                  unit_scale=False, dynamic_ncols=False, smoothing=0.3,
                  bar_format=None, initial=0, position=None, postfix=None,
                  unit_divisor=1000, gui=False, **kwargs):
+        """
+        Progress bar getting function. It uses the same interface of the [tqdm](https://tqdm.github.io)  library.
 
+        Returns:
+            tqdm object
+
+        """
         params = {
             'desc': desc,
             'total': total,
@@ -61,5 +83,5 @@ class TelegramTqdm():
 
         if iterable is not None:
             params['iterable'] = iterable
-            
+
         return tqdm(**params)

@@ -1,14 +1,46 @@
+"""
+Package containing the Telegram Keras functions and classes. 
+"""
 import time
-import keras
 from datetime import timedelta
 import matplotlib.pyplot as plt
 import numpy as np
 from .bot import TelegramBot
 from .utils import TelegramTqdm
 
+try:
+    import keras
+except:
+    from tensorflow import keras
+
 
 class KerasTelegramCallback(keras.callbacks.Callback):
-    def __init__(self, bot: TelegramBot, epoch_bar=True, to_plot=[]):
+    """
+    This class allows to send through a Telegram Bot updates about your training. 
+    """
+
+    def __init__(self, bot: TelegramBot, epoch_bar: bool = True, to_plot: list = []):
+        """
+        Constructor
+
+        Arguments:
+            bot: TelegramBot object
+
+            epoch_bar: True to receive the current epoch progress bar
+
+            to_plot: list of dict contaings plot details (e.g. metric to plots and style)
+                ```python
+                {
+                    'metrics': ['acc', 'val_acc'],
+                    'title':'Accuracy plot',
+                    'ylabel':'acc',
+                    'ylim':(0, 1),
+                    'xlim':(1, n_epochs)
+                }
+                ```
+
+        """
+
         self.bot = bot
         self.name = str(int(time.time()))+'.png'
         self.epoch_bar = epoch_bar
